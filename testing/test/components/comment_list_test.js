@@ -7,7 +7,7 @@ describe('Testing CommentList', () => {
 
   beforeEach((done) => {
     //define props
-    const props = { comments: [ '1st comment' , '2nd new comment' ]};
+    const props = { comments: [ '1st comment' , '2nd new comment', 'foo' ]};
     component = renderComponent(CommentList, null, props);
     done();
   });
@@ -18,7 +18,7 @@ describe('Testing CommentList', () => {
 
   it('shows an <li> for each comment', () => {
     //due 2 comments in the props.comments object
-    expect(component.find('li').length+1).to.equal(2);
+    expect(component.find('li').length).to.equal(3);
   });
 
   it('it shows each comment text, that is provided', () => {
@@ -27,7 +27,8 @@ describe('Testing CommentList', () => {
 
     //hardcoded TODO improve on dynammic structures?
     expect(component).to.contain('1st comment');
-    //expect(component).to.contain('2nd new comment');
+    expect(component).to.contain('2nd new comment');
+    expect(component).to.contain('foo');
   });
 
 });

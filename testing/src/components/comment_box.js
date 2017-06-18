@@ -1,7 +1,11 @@
 import React, { Component} from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 //creation of class based component
-export default class CommentBox extends Component {
+
+//TODO promote class to redux container
+class CommentBox extends Component {
 
   constructor(props) {
     super(props);
@@ -14,6 +18,7 @@ export default class CommentBox extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.props.saveComment(this.state.comment);
     this.setState({ comment : ''});
   }
 
@@ -32,3 +37,7 @@ export default class CommentBox extends Component {
     );
   }
 }
+
+//connect (mapsStateToProps= null,)
+//due import line 3 we can mapState on actions
+export default connect(null,actions)(CommentBox);

@@ -1,4 +1,5 @@
 npm-debug.log
+DS_Store
 
 testing/node_modules/**
 testing/npm-debug.log
