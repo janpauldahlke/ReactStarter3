@@ -42,9 +42,9 @@ describe('Testing CommentBox', () => {
 
     it('when submitted, clears the input', () => {
       //emtpy field by submitting
-      component.find('button').simulate('click');
+      component.simulate('submit');
       //setTimeOut? or callback nesting
-      //expect(component.find('textarea')).to.have.value('');
+      expect(component.find('textarea')).to.have.value('');
     });
   });
 });
