@@ -35,5 +35,5 @@ function mapStateToProps(state) {
   return {comments: state.comments};
 }
 
-//
-export default connect()(CommentList);
+//into redux container
+export default connect(mapStateToProps)(CommentList);
