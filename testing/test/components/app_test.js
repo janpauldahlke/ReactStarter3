@@ -4,15 +4,14 @@ import App from '../../src/components/app';
 //group similar tests -> App
 describe('Testing App', () =>{
 
+  let component
   beforeEach(() => {
-    //console.log('run App test beforeEach');
+    component = renderComponent(App);
   });
 
   //use 'it' to test a single attribute of a target
   it('shows the correct text', () => {
 
-    //helper to render the App Component
-    const component = renderComponent(App);
     /*use 'expect' to make an assertion about target
     //  syntax is
     //  expect(component).to.have.class('selector')

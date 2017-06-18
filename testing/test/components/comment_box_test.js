@@ -3,16 +3,14 @@ import CommentBox from '../../src/components/comment_box';
 
 describe('Testing CommentBox', () => {
 
-  //give component let
+  //give component let (it changes in each beforeEach)
   let component;
 
   beforeEach((done) => {
-    //render Element on component, call done();
+    //reassign render Element on component, call done();
     component = renderComponent(CommentBox);
     done();
   });
-
-
 
   // matchers reference
   // https://github.com/chaijs/chai-jquery
