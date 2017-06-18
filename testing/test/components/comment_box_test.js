@@ -26,4 +26,25 @@ describe('Testing CommentBox', () => {
   it('Component has Button', () => {
     expect(component.find('button')).to.exist;
   });
+
+  //wrap related tests in a nested describe()
+  describe('test entering text in the area', () => {
+
+    beforeEach((done) => {
+      //simulate('eventname', 'fakeText')
+      component.find('textarea').simulate('change', 'new comment');
+      done();
+    })
+
+    it('shows text that is entered by the user', () => {
+      expect(component.find('textarea')).to.have.value('new comment');
+    });
+
+    it('when submitted, clears the input', () => {
+      //emtpy field by submitting
+      component.find('button').simulate('click');
+      //setTimeOut? or callback nesting
+      expect(component.find('textarea')).to.have.value('');
+    });
+  });
 });

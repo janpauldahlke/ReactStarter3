@@ -4,9 +4,9 @@ import React, { Component} from 'react';
 export default class CommentBox extends Component {
   render() {
     return (
-      <div className="comment-box">
+      <div className="comment-box input-group">
         <textarea />
-        <button>Submit comment</button>
+        <button className="btn btn-default">Submit comment</button>
       </div>
     );
   }
