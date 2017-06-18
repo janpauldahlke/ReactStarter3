@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 //class based approach
 /*
@@ -18,11 +19,21 @@ export default class CommentList extends Component{
 */
 
 //functional component approach
-
+//  TODO create a react-container
+//  containers have access to app state through redux
+//  line 2 import
 const CommentList = (props) => {
+
   return (
     <ul className="comment-list"></ul>
   );
 }
 
-export default CommentList;
+//into redux containers
+function mapStateToProps(state) {
+  //TODO create a reducer for state.comments
+  return {comments: state.comments};
+}
+
+//
+export default connect()(CommentList);
