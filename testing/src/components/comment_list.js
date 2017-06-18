@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+//class based approach
+/*
 export default class CommentList extends Component{
 
   render() {
@@ -12,5 +14,15 @@ export default class CommentList extends Component{
       </div>
     );
   }
-
 }
+*/
+
+//functional component approach
+
+const CommentList = (props) => {
+  return (
+    <ul className="comment-list"></ul>
+  );
+}
+
+export default CommentList;
