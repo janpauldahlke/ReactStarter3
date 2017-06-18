@@ -1,2 +1,4 @@
-ReduxSimpleStarter_/node_modules/**
-ReduxSimpleStarter_/npm-debug.log
+npm-debug.log
+
+testing/node_modules/**
+testing/npm-debug.log
