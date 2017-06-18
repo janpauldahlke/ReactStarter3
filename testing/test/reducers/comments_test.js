@@ -8,7 +8,7 @@ describe('Tests the CommentsReducer', () => {
     //give empty reducer
     //expect(CommentReducer()).to.be.instanceof(Array);
     //eql is a deep structure eql
-    expect(CommentReducer()).to.be.eql([]);
+    expect(CommentReducer([], {})).to.be.eql([]);
   });
 
   it('handles action of type SAVE_COMMENT', () => {
