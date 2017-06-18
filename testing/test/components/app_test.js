@@ -25,4 +25,8 @@ describe('Testing App', () =>{
     expect(component.find('.comment-box')).to.exist;
   });
 
+  it('CommentList is displayed as child on App', () => {
+    expect(component.find('.comment-list')).to.exist;
+  });
+
 });
