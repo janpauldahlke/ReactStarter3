@@ -5,6 +5,10 @@ describe('Testing CommentBox', () => {
 
   // matchers reference
   // https://github.com/chaijs/chai-jquery
+  it('has a the correct className', () => {
+    const component = renderComponent(CommentBox);
+    expect(component).to.have.class('comment-box');
+  });
 
   it('Component has TextArea', () => {
   //no params() on exist !!
