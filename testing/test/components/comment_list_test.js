@@ -13,4 +13,13 @@ describe('Testing CommentList', () => {
   it('has the correct classname', () => {
     expect(component).to.have.class('comment-list');
   });
+
+  it('shows an <li> for each comment', () => {
+
+  });
+
+  it('it shows each comment, that is provided', () => {
+
+  });
+  
 });
