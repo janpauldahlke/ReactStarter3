@@ -42,6 +42,7 @@ describe('Testing CommentBox', () => {
 
     it('when submitted, clears the input', () => {
       //emtpy field by submitting
+      //console.log(component);
       component.simulate('submit');
       //setTimeOut? or callback nesting
       expect(component.find('textarea')).to.have.value('');
