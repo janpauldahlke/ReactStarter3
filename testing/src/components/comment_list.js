@@ -1,31 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-//class based approach
-/*
-export default class CommentList extends Component{
-
-  render() {
-    return (
-      <div className="comment-list">
-        <h3>Comments List</h3>
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-    );
-  }
-}
-*/
-
 //functional component approach
 //  TODO create a react-container
 //  containers have access to app state through redux
 //  line 2 import
+//  iterate over comments via props.comments.map()
+
 const CommentList = (props) => {
 
+  const list = props.comments.map(comment =>
+    <li key="comment" >{ comment }</li>
+  );
+
   return (
-    <ul className="comment-list"></ul>
+    <ul className="comment-list">{ list }</ul>
   );
 }
 
