@@ -5,36 +5,41 @@
   4. set up chaiJquery
 */
 
-import React from 'react';
-import jsdom from 'jsdom';
 import jquery from 'jquery';
-import TestUtils from 'react-addons-test-utils';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Chai, { expect } from 'chai';
+import TestUtils from 'react-addons-test-utils';
+import jsdom from 'jsdom';
+import chai, { expect } from 'chai';
+import chaiJquery from 'chai-jquery';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../src/reducers';
-import chaiJquery from 'chai-jquery';
+
 
 //------------//
 //create fake html and assign it to global (scope) document
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 //https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView#Syntax
 global.window = global.document.defaultView;
+global.navigator = global.window.navigator;
 //wire up jquery and jsdom //wrap an instance of jq and bind to global.window
-const $ = jquery(global.window);
+const $ = jquery(window);
 //------------//
 
 //------------//
+//seutp chaiJquery
+// https://github.com/chaijs/chai-jquery
+chaiJquery(chai, chai.util, $);
+//------------//
+
+
+//------------//
 //renderHelper()
-function renderComponent(ComponentClass, props, state) {
+function renderComponent(ComponentClass, props = {}, state = {}) {
   //"copy" of the class as instance (rendered version)
   const componentInstance = TestUtils.renderIntoDocument(
-    //wrap this with Provider and create store
-    //createStore = connect with 2
     <Provider store={ createStore(reducers, state) }>
-      //spread operator to bind props to toplevel
-      // dont do !! props = { props} the call would be ComponentClass.props.props
       <ComponentClass {...props} />
     </Provider>
   );
@@ -58,9 +63,7 @@ $.fn.simulate = function(eventName, value) {
   //this[0] only on th first element
     TestUtils.Simulate[eventName](this[0]);
 }
-
-
-
+//------------//
 
 
 //
