@@ -7,12 +7,25 @@
 
 
 import jsdom from 'jsdom';
-import _$ from 'jquery';
+import jquery from 'jquery';
+import TestUtils from 'react-addons-test-utils';
+import ReactDOM from 'react-dom';
 
 
 //create fake html and assign it to global (scope) document
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 //https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView#Syntax
 global.window = global.document.defaultView;
-//wire up jquery and jsdom
-const $ = _$(global.window);
+//wire up jquery and jsdom //wrap an instance of jq and bind to global.window
+const $ = jquery(global.window);
+
+//renderHelper
+function renderComponent(ComponentClass) {
+  //"copy" of the class as instance (rendered version)
+  const componentInstance = TestUtils.renderIntoDocument(<ComponentClass />);
+  //get acces to DOM
+  return $(ReactDOM.findDOMNode(componentInstance)); //produces the HTML)
+}
+
+
+//export default renderComponent;
