@@ -37,3 +37,7 @@ lets take a deeper look at /testing/tests/test_helper.js
   -- pass the reducers to createStore
   - implement props || state as args to renderComponent
 ---
+- @3)
+  - 'simulateEvent' helper
+  - add function to $ named simulate, that every instance of $
+   - reference https://facebook.github.io/react/docs/test-utils.html#simulate

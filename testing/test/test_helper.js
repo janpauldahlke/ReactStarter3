@@ -14,14 +14,18 @@ import Chai, { expect } from 'chai';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../src/reducers';
+import chaiJquery from 'chai-jquery';
 
+//------------//
 //create fake html and assign it to global (scope) document
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 //https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView#Syntax
 global.window = global.document.defaultView;
 //wire up jquery and jsdom //wrap an instance of jq and bind to global.window
 const $ = jquery(global.window);
+//------------//
 
+//------------//
 //renderHelper()
 function renderComponent(ComponentClass, props, state) {
   //"copy" of the class as instance (rendered version)
@@ -36,9 +40,28 @@ function renderComponent(ComponentClass, props, state) {
   );
   //get acces to DOM
   return $(ReactDOM.findDOMNode(componentInstance)); //produces the HTML)
+//------------//
+}
+//------------//
+// @callback simulate
+// @param  {String} eventName
+// @params {String} value
+
+//add function to $ named simulate, that every instance of $
+//https://facebook.github.io/react/docs/test-utils.html#simulate
+$.fn.simulate = function(eventName, value) {
+
+  if(value) {
+    this.val(value);
+  }
+  //Simulate[change]!! contemplate
+  //this[0] only on th first element
+    TestUtils.Simulate[eventName](this[0]);
 }
 
 
 
+
+
 //
-export {renderComponent, expect};
+export { renderComponent, expect };
