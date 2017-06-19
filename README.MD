@@ -35,4 +35,5 @@ lets take a deeper look at /testing/tests/test_helper.js
   - fight errors and renderComponent as child Element of <Provider>
   -- wrap component into provider and pass provider to redux
   -- pass the reducers to createStore
+  - implement props || state as args to renderComponent
 ---

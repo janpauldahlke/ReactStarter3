@@ -23,12 +23,15 @@ global.window = global.document.defaultView;
 const $ = jquery(global.window);
 
 //renderHelper()
-function renderComponent(ComponentClass) {
+function renderComponent(ComponentClass, props, state) {
   //"copy" of the class as instance (rendered version)
   const componentInstance = TestUtils.renderIntoDocument(
     //wrap this with Provider and create store
-    <Provider store={ createStore(reducers) }>
-      <ComponentClass />
+    //createStore = connect with 2
+    <Provider store={ createStore(reducers, state) }>
+      //spread operator to bind props to toplevel
+      // dont do !! props = { props} the call would be ComponentClass.props.props
+      <ComponentClass {...props} />
     </Provider>
   );
   //get acces to DOM
