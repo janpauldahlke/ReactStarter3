@@ -10,7 +10,7 @@ import jsdom from 'jsdom';
 import jquery from 'jquery';
 import TestUtils from 'react-addons-test-utils';
 import ReactDOM from 'react-dom';
-
+import Chai, { expect } from 'chai';
 
 //create fake html and assign it to global (scope) document
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
@@ -28,4 +28,4 @@ function renderComponent(ComponentClass) {
 }
 
 
-//export default renderComponent;
+export {renderComponent, expect};
