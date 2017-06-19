@@ -31,3 +31,8 @@ lets take a deeper look at /testing/tests/test_helper.js
   - create componentInstance with test-utils
   - map this via react-dom to html
   - return this whole expression as jquery element on global.document
+  - export it
+  - fight errors and renderComponent as child Element of <Provider>
+  -- wrap component into provider and pass provider to redux
+  -- pass the reducers to createStore
+---

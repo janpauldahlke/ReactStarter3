@@ -5,12 +5,15 @@
   4. set up chaiJquery
 */
 
-
+import React from 'react';
 import jsdom from 'jsdom';
 import jquery from 'jquery';
 import TestUtils from 'react-addons-test-utils';
 import ReactDOM from 'react-dom';
 import Chai, { expect } from 'chai';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from '../src/reducers';
 
 //create fake html and assign it to global (scope) document
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
@@ -19,13 +22,20 @@ global.window = global.document.defaultView;
 //wire up jquery and jsdom //wrap an instance of jq and bind to global.window
 const $ = jquery(global.window);
 
-//renderHelper
+//renderHelper()
 function renderComponent(ComponentClass) {
   //"copy" of the class as instance (rendered version)
-  const componentInstance = TestUtils.renderIntoDocument(<ComponentClass />);
+  const componentInstance = TestUtils.renderIntoDocument(
+    //wrap this with Provider and create store
+    <Provider store={ createStore(reducers) }>
+      <ComponentClass />
+    </Provider>
+  );
   //get acces to DOM
   return $(ReactDOM.findDOMNode(componentInstance)); //produces the HTML)
 }
 
 
+
+//
 export {renderComponent, expect};
