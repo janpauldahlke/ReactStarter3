@@ -3,3 +3,6 @@ DS_Store
 
 testing/node_modules/**
 testing/npm-debug.log
+
+higherOrder/node_modules/**
+higherOrder/npm-debug.log
