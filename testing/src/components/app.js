@@ -8,6 +8,7 @@ export default class App extends Component {
 
     return (
       <div>
+        React simple starter
         <CommentBox />
         <CommentList />
       </div>

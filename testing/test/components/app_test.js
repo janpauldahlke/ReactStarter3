@@ -11,7 +11,7 @@ describe('Testing App', () =>{
   });
 
   //use 'it' to test a single attribute of a target
-  it('shows the correct text', () => {
+  xit('shows the correct text', () => {
     /*use 'expect' to make an assertion about target
     //  syntax is
     //  expect(component).to.have.class('selector')
