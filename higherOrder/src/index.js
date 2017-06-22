@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, browserHistory } from 'react-router';
 
 import App from './components/app';
+import Ressources from './components/ressources';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -12,7 +13,9 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={ browserHistory }>
-      <Route path ="/" component={App} ></Route>
+      <Route path ="/" component={App} >
+        <Route path="/Ressources" component={Ressources} ></Route>
+      </Route>
     </Router>
   </Provider>
   , document.querySelector('#root'));
