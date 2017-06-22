@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-//import { inviteReducer } from './reducer_invite';
+import authenticationReducer from './authentication_reducer';
 
 const rootReducer = combineReducers({
-  //invite : inviteReducer
-  
+  autenticated : authenticationReducer
 });
 
 export default rootReducer;
