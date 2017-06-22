@@ -4,10 +4,7 @@ import { Link } from 'react-router';
 class Header extends Component {
 
   authButton(){
-
-      return(
-        <button>Sign In</button>
-      );
+    return <button className="btn">Sign In</button>;
   }
 
   render() {
