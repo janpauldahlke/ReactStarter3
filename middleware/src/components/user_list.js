@@ -21,3 +21,11 @@ class Userlist extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    users: state.users
+  }
+}
+
+export default connect(mapStateToProps)(Userlist);
