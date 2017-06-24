@@ -9,7 +9,7 @@ class Header extends Component {
 
   authButton(){
   //refers to reducer key field
-    console.log(this.props.authenticated);
+    //console.log(this.props.authenticated);
     if (this.props.authenticated) {
 
       // refers to function name of exported func in index.js
@@ -21,7 +21,7 @@ class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-ligth">
-  
+
         <ul className="navbar navbar-nav">
           <li className="nav-item">
             <Link to="/">Home</Link>

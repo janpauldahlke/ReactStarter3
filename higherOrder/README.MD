@@ -9,9 +9,11 @@
 ---
 ## component example flow
 - user tries to visit protected route
-- -> is user logged in?
-- -> Yes - allow access
-- -> No - redirect back to home route
+- `-> is user logged in?`
+- `-> Yes - allow access`
+- `-> No - redirect back to home route`
 
 - the composition of higherOrder component will be
 - - ResourceListComponent + requireAUTH = compose component that will check status before rendering
+- - https://facebook.github.io/react/docs/context.html //deprecated?
+  - to make component listen to router level

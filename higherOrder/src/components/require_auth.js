@@ -34,14 +34,36 @@ export default function (ComposedComponent) {
 //connect to redux-store
 import { connect } from 'react-redux';
 
-
 export default function (ComposedComponent) {
   class Authentication extends Component{
+    //how to access context on a component
+    //static calls a class Level Property
+    //will show in the entire project as
+    // Authentication.contextTypes binds OBject to the class and not the instance
+    static contextTypes = {
+      router : React.PropTypes.object
+    }
+
+    /* experimenting with the router object
+    componentWillMount() {
+      this.context.router.push('/');
+    }
+    */
+
+    componentWillMount(){
+      if(!this.props.authenticated) {
+        this.context.router.push('/');
+      }
+    }
+
     render() {
+      //console.log(this.context);
+      //console.log(this.props.authenticated);
       //console.log('rendering: ', ComposedComponent);
       return <ComposedComponent {...this.props}/>
     }
   }
+
   function mapStateToProps(state){
     return{
       authenticated : state.authenticated
