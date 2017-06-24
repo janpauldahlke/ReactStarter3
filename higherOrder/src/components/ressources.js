@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 export default () => {
   return (
@@ -7,10 +7,10 @@ export default () => {
     </div>
   );
 };
-
+*/
 /*
   different approach to include HOC would be this
-
+*/
 import React from 'react';
 import requireAUTH from './require_auth';
 
@@ -24,4 +24,3 @@ const Ressources = () => {
 export default requireAUTH(Ressources);
 
 //instead of doing it in index.js and wrap the routes component there
-*/
