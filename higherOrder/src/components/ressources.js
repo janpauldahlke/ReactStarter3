@@ -12,7 +12,7 @@ export default () => {
   different approach to include HOC would be this
 
 import React from 'react';
-import Authentication from './require_auth';
+import requireAUTH from './require_auth';
 
 const Ressources = () => {
   return (
