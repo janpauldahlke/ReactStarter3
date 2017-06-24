@@ -6,3 +6,7 @@ testing/npm-debug.log
 
 higherOrder/node_modules/**
 higherOrder/npm-debug.log
+
+
+middleware//node_modules/**
+middleware/npm-debug.log
