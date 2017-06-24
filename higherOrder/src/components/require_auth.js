@@ -56,6 +56,13 @@ export default function (ComposedComponent) {
       }
     }
 
+    componentWillUpdate(nextProps){
+      if(!nextProps.authenticated) {
+        this.context.router.push('/');
+      }
+    }
+
+
     render() {
       //console.log(this.context);
       //console.log(this.props.authenticated);
