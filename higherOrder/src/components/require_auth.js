@@ -31,12 +31,21 @@ export default function (ComposedComponent) {
 //in some render method ...
 //<ComposedComponent />
 
+//connect to redux-store
+import { connect } from 'react-redux';
+
 
 export default function (ComposedComponent) {
   class Authentication extends Component{
     render() {
+      //console.log('rendering: ', ComposedComponent);
       return <ComposedComponent {...this.props}/>
     }
   }
-  return Authentication;
+  function mapStateToProps(state){
+    return{
+      authenticated : state.authenticated
+    }
+  }
+  return connect(mapStateToProps)(Authentication);
 }
