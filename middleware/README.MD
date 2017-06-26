@@ -14,3 +14,8 @@ roadmap to TODO:
 1. build app with dummy data
 2. replace dummy data with AJAX
 3. write middleware to fetch data
+
+https://jsonplaceholder.typicode.com/
+
+usage of middleware:
+![middleware](http://i.imgur.com/T1kKJan.png)
