@@ -19,3 +19,4 @@ https://jsonplaceholder.typicode.com/
 
 usage of middleware:
 ![middleware](http://i.imgur.com/T1kKJan.png)
+![middleware flow](http://i.imgur.com/iFJe1WG.png)
